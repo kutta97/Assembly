@@ -26,6 +26,29 @@ main:   save    %sp, -96, %sp
 
 		! fmt2
 		dec		%l1
+		mov		0, %l3
+		tst		%l0
+		be		next1
+		nop
+		mov		1, %l3
+
+next1:	mov		0, %l4
+		tst		%l1
+		be		next2
+		nop
+		mov		1, %l4
+
+next2:	or		%l3, %l4, %l3
+		mov		0, %l4
+		tst		%l2
+		be		next3
+		nop
+		mov		1, %l4
+
+next3:	and		%l3, %l4, %o1
+		set     fmt2, %o0
+        call    printf
+		nop
 
 		! fmt3
 		inc		%l1
