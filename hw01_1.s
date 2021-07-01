@@ -35,6 +35,7 @@ main:   save    %sp, -96, %sp
 		mov		%l2, %o1
 		set     fmt3, %o0
         call    printf
+		nop
 
 		! fmt4
 		mov		5, %l2
@@ -43,6 +44,7 @@ main:   save    %sp, -96, %sp
 		mov		%l0, %o1
 		set     fmt4, %o0
         call    printf
+		nop
 
 		! fmt5
 		mov		1, %l3
@@ -54,8 +56,7 @@ main:   save    %sp, -96, %sp
 		mov		%l0, %o1
 		set     fmt5, %o0
         call    printf
-
-true:	mov		1, %l3
+		nop
 
         ret
         restore
