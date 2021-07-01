@@ -8,19 +8,23 @@ main:   save    %sp, -96, %sp
 		mov     80, %l0			! score = 80
 		subcc	%l0, 80, %g0
 		bl		next1
+		nop
 		mov		%l0, %o1
 		set     fmt1, %o0
         call    printf
 		nop
 		ba		end
+		nop
 
 next1:	subcc	%l0, 60, %g0
 		bl		next2
+		nop
 		mov		%l0, %o1
 		set     fmt2, %o0
         call    printf
 		nop
 		ba		end
+		nop
 
 next2:	mov		%l0, %o1
 		set     fmt3, %o0
