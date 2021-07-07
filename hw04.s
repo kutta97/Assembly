@@ -35,8 +35,8 @@ stest:	cmp		%l0, %l7		! i < 7
 		bl		sloop
 		nop
 
-		dec		%l0
-		ba		dtest			! i 를 6으로 만들어줌(ld를 사용하지 않고 %l0를 재사용)
+		dec		%l0				! i 를 6으로 만들어줌(ld를 사용하지 않고 %l0를 재사용)
+		ba		dtest
 		nop
 
 ! doubling for loop
