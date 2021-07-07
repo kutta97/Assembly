@@ -23,9 +23,9 @@ main:	save	%sp, (-96-(4*7)-1*4)&-8, %sp
 		nop
 
 ! scanf for loop
-sloop:	sll		%l0, 2, %o1		! i * 4
-		add		%fp, %o1, %o1	! %fp + i * 4
-		add		%o1, list, %o1	! %fp - 28 + i * 4
+sloop:	sll		%l0, 2, %o0		! i * 4
+		add		%fp, %o0, %o0	! %fp + i * 4
+		add		%o0, list, %o1	! %fp - 28 + i * 4
 		set		fmt5, %o0
 		call	scanf
 		nop
@@ -61,9 +61,9 @@ dtest:	tst		%l0				! i => 0
 		ba		ptest
 		nop
 
-ploop:	sll		%l0, 2, %l1		! i * 4
-		add		%l1, list, %l1	! %fp - 28 + i * 4
-		ld		[%fp+%l1], %o1
+ploop:	sll		%l0, 2, %o0		! i * 4
+		add		%o0, list, %o0	! %fp - 28 + i * 4
+		ld		[%fp+%o0], %o1
 		set		fmt3, %o0
 		call	printf
 		nop
