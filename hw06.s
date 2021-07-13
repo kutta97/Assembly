@@ -53,17 +53,17 @@ exit:	mov		1, %g1					! exit(0)
 sum:	save	%sp, -(92+4)&-8, %sp
 		mov		%g0, %l0				! %l0 = total = 0
 		st		%l0, [%fp + total_s_f]	! int total = 0
-		ba		WhileTest
+		ba		whileTest
 		nop
 
 whileLoop:
 		sll		%i0, 2, %l4				! n * 4
-		add		%i1, %l4, %l5			! %l5 = a[0+n]
+		add		%i1, %l4, %l5			! %l5 = a[n]
 		ld		[%l5], %l1				! a[n] 값을 load
 		add		%l0, %l1, %l0			! total += a[n]
 		st		%l0, [%fp + total_s_f]
 
-WhileTest:
+whileTest:
 		tst		%i0						! n > 0
 		dec		%i0						! n--
 		bg		whileLoop
